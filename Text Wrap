@@ -1,0 +1,8 @@
+import textwrap
+ans=[]
+def wrap(string, max_width):
+    for i in range(0,len(string),max_width):
+        ans.append(string[i:i+max_width])
+    return '\n'.join(ans)
+
+if __name__ == '__main__':

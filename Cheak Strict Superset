@@ -1,0 +1,7 @@
+set1=set(map(int,input().split()))
+size_set2=int(input())
+set3=set(map(int,input().split()))
+set4=set(map(int,input().split()))
+if set1.issubset(set3) and set1.issubset(set4):
+    print(True)
+    

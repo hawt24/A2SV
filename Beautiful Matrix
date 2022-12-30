@@ -1,0 +1,7 @@
+col=5
+row=5
+for i in range(row):
+    for j in range(col):
+        n=int(input())
+        if n==1:
+            print(abs(i-3)+abs(j-3))

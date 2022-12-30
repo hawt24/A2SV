@@ -1,0 +1,19 @@
+n=int(input())
+dict={}
+for i in range(n):
+    word=str(input())
+    if word in dict:
+        dict[word]+=1
+    else:
+        dict[word]=1
+for key,val in dict.items():
+    if val>1:
+        print(word+"1")
+    else:
+        print("Ok")
+
+
+
+
+
+

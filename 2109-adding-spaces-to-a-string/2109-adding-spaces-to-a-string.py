@@ -1,12 +1,12 @@
 class Solution:
     def addSpaces(self, s: str, spaces: List[int]) -> str:
-        string=''
+        string = []
         spaces=set(spaces)
         for i in range(len(s)):
             if i in spaces:
-                string+=" "+s[i]
-            else:
-                string+=s[i]
-        return string
-                
+                string.append(" ")
+            string.append(s[i])
+        return "".join(string)
+
+      
       

@@ -1,0 +1,7 @@
+number_english=int(input())
+english_subscriber=set(map(int,input().split()))
+number_french=int(input())
+french_subscriber=set(map(int,input().split()))
+ans=english_subscriber.difference(french_subscriber)
+print(len(ans))
+

@@ -3,11 +3,9 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        start_index=0
+        start=0
         for i in range(len(nums)):
             if nums[i]!=0:
-                temp=nums[start_index]
-                nums[start_index]=nums[i]
-                nums[i]=temp
-                start_index+=1
-      
+                nums[i],nums[start]=nums[start],nums[i]
+                start+=1
+       

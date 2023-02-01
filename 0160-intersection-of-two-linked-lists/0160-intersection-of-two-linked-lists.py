@@ -22,6 +22,13 @@ class Solution:
         #                 if valA[i]==valB[j]:
         #                     return valA[i]
         #         return None
+        '''
+        first find the differce lengeth between two head A and B
+        then know the strating point greater of greater elemen after that 
+        move two pointer equally and return the intersection
+    
+    
+        '''
         currA=headA
         lenA=0
         while currA:

@@ -2,14 +2,21 @@ class Solution:
     def totalFruit(self, fruits: List[int]) -> int:
         start=0
         end=0
-        dic={}
-        max_len=0
+        dic=defaultdict(int)
+        window_size=0
         while end<len(fruits):
-            dic[fruits[end]]=end
-            if len(dic)>=3:
-                min_val=min(dic.values())
-                del dic[fruits[min_val]]
-                start=min_val+1
-            max_len=max(max_len,end-start+1)
+            dic[fruits[end]]+=1
+            while len(dic)>=3:
+                dic[fruits[start]]-=1
+                if dic[fruits[start]]==0:
+                    del dic[fruits[start]]
+                
+                start+=1
+            window_size=max(window_size,end-start+1) 
             end+=1
-        return max_len
+        return window_size
+            
+            
+        
+
+  

@@ -2,7 +2,7 @@ class Solution:
     def PredictTheWinner(self, nums: List[int]) -> bool:
         def helper(start,end):
             if start==end:
-                return nums[start]
+                return nums[end]
             left=nums[start]
             right=nums[end]
             left_op=helper(start+1,end)

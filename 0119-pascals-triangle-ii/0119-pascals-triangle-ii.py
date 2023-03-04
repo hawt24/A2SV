@@ -1,11 +1,9 @@
 class Solution:
     def getRow(self, rowIndex: int) -> List[int]:
-        row = [1]
-        nrow = 1
-        while nrow <= rowIndex+1:
-            newRow = [1] * nrow
-            for i in range(1,nrow-1):
-                newRow[i] = row[i-1] + row[i]
-            row = newRow
-            nrow += 1
-        return newRow
+        ans = []
+        for i in range(1, rowIndex+ 2):
+            row = [1] * i
+            for j in range(1,i-1):
+                row[j] = ans[i - 2][j] + ans[i - 2][j - 1]
+            ans.append(row)
+        return ans[rowIndex]

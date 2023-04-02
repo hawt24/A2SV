@@ -13,6 +13,5 @@ class Solution:
         while k>0:
             ans = -heappop(nums)
             k -= 1
-        
         return ans
       

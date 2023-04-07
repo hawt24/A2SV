@@ -1,7 +1,6 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        cnt=Counter(nums)
+        temp=0
         for i in range(len(nums)):
-            if cnt[nums[i]]==1:
-                return nums[i]
-                
+            temp^=nums[i]
+        return temp

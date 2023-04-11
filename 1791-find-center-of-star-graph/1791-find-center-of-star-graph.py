@@ -9,7 +9,13 @@ class Solution:
         if temp:
             return list(temp)[0]
         else:
-            return 3
+            if len(temp1)>len(temp2):
+                return list(temp2)[0]
+            else:
+                return list(temp1)[0]
+                
+                
+            
     
         
             

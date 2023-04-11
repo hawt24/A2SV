@@ -1,12 +1,11 @@
 class Solution:
     def findSmallestSetOfVertices(self, n: int, edges: List[List[int]]) -> List[int]:
-        temp=set()
         ans=[]
-        graph=defaultdict(list)
+        graph=defaultdict(int)
         for i ,j in edges:
-            temp.add(j)
-        for i,j in edges:
-            if i not in temp:
+            graph[j] = 1
+        for i in range(n):
+            if graph[i]==0:
                 ans.append(i)
         return list(set(ans))
             

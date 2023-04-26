@@ -4,22 +4,30 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
 class Solution:
     def tree2str(self, root: Optional[TreeNode]) -> str:
-        def dfs(node):
-            if not node:
-                return ""
-            
-            ans=str(node.val)
-            if not node.left and not node.right:
-                return ans
-            
-            if node.left:
-                ans+='(' + dfs(node.left) + ')'
-            else:
-                ans+="()"
-            if node.right:
-                ans+='(' + dfs(node.right) + ')'
-            
-            return ans
-        return dfs(root)
+        return self.preorder(root)
+    
+    def preorder(self,root):
+        
+        if not root:
+            return 
+        
+        if not root.right and not root.left:
+            return str(root.val)
+        
+        l = self.preorder(root.left)
+        r = self.preorder(root.right)
+        
+        ans =str(root.val)
+        
+        if l:
+            ans+= ("(" + l + ")")
+        else:
+            ans+= ("()")
+        if r:
+            ans+=("(" + r + ")")
+        return ans
+
+        

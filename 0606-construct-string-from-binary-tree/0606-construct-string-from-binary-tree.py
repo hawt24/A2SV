@@ -14,8 +14,10 @@ class Solution:
             if not node.left and not node.right:
                 return ans
             
-            # if node.left:
-            ans+='(' + dfs(node.left) + ')'
+            if node.left:
+                ans+='(' + dfs(node.left) + ')'
+            else:
+                ans+="()"
             if node.right:
                 ans+='(' + dfs(node.right) + ')'
             

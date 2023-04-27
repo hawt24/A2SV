@@ -1,28 +1,32 @@
 class Solution:
     def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:
-
-        #         def bfs(node):
-        #             visited=set()
-        #             que=deque()
-        #             while que:
-        #                 key=que.popleft()
-
-
-        #             for key in rooms[node]:
-        #                 if key not in visited:
-        #                     visited.add(key)
-        #                     que.apppend(key)
-        #                 bfs(key)
-        visited=set()
-        def dfs(node):
-            if node in visited:
-                return 
-            visited.add(node)
-            for key in rooms[node]:
-                dfs(key)
+        
+        visited=set([0])
+        
+        def bfs(node):
+            nonlocal visited
+            que=deque([0])
+            
+            while que:
+                key=que.popleft()
+                for i in rooms[key]:
+                    if i not in visited:
+                        visited.add(i)
+                        que.append(i)
+                        
+        bfs(0)
+        return len(visited)==len(rooms)
                 
-        dfs(0)
-        return len(rooms)==len(visited)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
             
 
             

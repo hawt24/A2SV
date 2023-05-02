@@ -8,11 +8,9 @@ class Solution:
     #Function to sort an array using Heap Sort.    
     def HeapSort(self, arr, n):
         #code here
-        heap = [arr[0]]
-        for val in arr[1:]:
+        heap = []
+        for val in arr:
            heappush(heap,val)
-        result = []
-        # print(heap)
         for i in range(n):
             arr[i] = (heappop(heap))
 

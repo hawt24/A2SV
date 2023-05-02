@@ -13,10 +13,8 @@ class Solution:
            heappush(heap,val)
         result = []
         # print(heap)
-        c = 0
         for i in range(n):
-            arr[c] = (heappop(heap))
-            c += 1
+            arr[i] = (heappop(heap))
 
 #{ 
  # Driver Code Starts

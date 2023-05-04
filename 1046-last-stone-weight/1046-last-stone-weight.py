@@ -5,16 +5,12 @@ class Solution:
         for i in range(len(stones)):
             stones[i]*=-1
             
-        heapify(stones)
-        print(stones)
-    
+        heapify(stones)    
         while stones:
             while len(stones)>1:
                 x=heappop(stones)
                 y=heappop(stones)
                 heappush(stones,x-y)
-                # stones.heappush((x-y))
-                print(stones)
             else:
                 return -stones[0]
         return 0

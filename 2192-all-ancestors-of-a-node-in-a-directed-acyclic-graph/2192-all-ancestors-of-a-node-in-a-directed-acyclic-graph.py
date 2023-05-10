@@ -1,8 +1,6 @@
 class Solution:
     def getAncestors(self, n: int, edges: List[List[int]]) -> List[List[int]]:
         graph = defaultdict(list)
-        for i in range(0,n+1):
-            graph[i]=[]
         for x, y in edges:
             graph[y].append(x)
                 

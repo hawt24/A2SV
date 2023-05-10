@@ -1,5 +1,10 @@
 class Solution:
     def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:
+        """"
+        # Color codes:
+        # white: not visited yet
+        # gray: visiting (in recursion stack)
+        # black: visited (safe)"""
         
         white, gray, black = 0, 1, 2
         def dfs(node):

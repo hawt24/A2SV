@@ -9,8 +9,7 @@ class Solution:
             graph[v].add(u)
         
         leave=[node for node in graph if len(graph[node])==1]
-        print(leave)
-        print(graph)
+
         while cnt>2:
             cnt-=len(leave)
             

@@ -10,7 +10,10 @@ class Solution:
                 a, b = item.split("!=")
                 set3.add((a, b))
             set1 |= {a, b}
+        print(set2)
+        
         graph = {char: char for char in set1}
+        print(graph)
         def find(char):
             if graph[char] == char:
                 return char

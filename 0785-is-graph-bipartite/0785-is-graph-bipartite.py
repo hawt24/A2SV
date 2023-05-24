@@ -2,9 +2,11 @@ class Solution:
     def isBipartite(self, graph: List[List[int]]) -> bool:
         
         arr=[-1]*len(graph)
+        print(arr)
         
         def dfs(i):
             for child in graph[i]:
+                print(child)
                 if arr[child]==-1:
                     if arr[i]==0:
                         arr[child]=1

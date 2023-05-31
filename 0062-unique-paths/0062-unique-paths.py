@@ -1,18 +1,20 @@
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
-        # base case: if starting cell is reached, return 1
-        # recurrence relation: dp(i-1,j) + dp(i,j-1)
+        dp = [[0 for _ in range(m)] for _ in range(n)]
         
-        memo = {}
-        def dp(i, j):
-            if i == m - 1 and j == n - 1:
-                return 1
-            if i >= m or j >= n:
-                return 0
-            if (i, j) in memo:
-                return memo[(i, j)]
-            ans = dp(i+1, j) + dp(i, j+1)
-            memo[(i, j)] = ans
-            return ans
+        dp[-1][-1] = 1
+
+        for i in range(n-2, -1, -1):
+            dp[i][-1] = 1
+        for j in range(m-2, -1, -1):
+            dp[-1][j] = 1
         
-        return dp(0, 0)
+        for i in range(n-2, -1, -1):
+            for j in range(m-2, -1, -1):
+                dp[i][j] = dp[i+1][j] + dp[i][j+1]
+                
+        
+        return dp[0][0]
+                 
+        
+        

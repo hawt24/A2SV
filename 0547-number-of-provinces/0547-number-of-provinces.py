@@ -3,6 +3,7 @@ class Solution:
         stack=[]
         visited=set()
         ans=0
+        
         for i in range(len(isConnected)):
             if i not in visited:
                 stack.append(i)

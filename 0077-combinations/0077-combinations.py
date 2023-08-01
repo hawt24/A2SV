@@ -9,8 +9,7 @@ class Solution:
                 backtrack(i, path + [i])
               
         answer = []
-        
-        for i in range(1, n + 1):
-            backtrack(i, [i])
+
+        backtrack(0, [])
         return answer
         

@@ -14,13 +14,4 @@ class Solution:
                 cheak.add(s[i])
                 stack.append(s[i])
                 
-        return "".join(stack)
-            
-        
-        
-    
-            
-       
-        
-            
-                
+        return "".join(stack)        

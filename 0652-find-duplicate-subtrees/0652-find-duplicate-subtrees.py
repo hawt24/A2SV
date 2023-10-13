@@ -12,7 +12,9 @@ class Solution:
 
             left = dfs(node.left, subtrees)
             right = dfs(node.right, subtrees)
-            subtree = f"{node.val},{left},{right}"
+            subtree = str(node.val) + "," + str(left) + "," + str(right)
+
+
 
             if subtree in subtrees:
                 subtrees[subtree] += 1
